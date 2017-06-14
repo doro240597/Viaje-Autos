@@ -13,16 +13,20 @@ package ec.com.viajesuta.Interfaces;
 import MisComponentes.ImagenFondo;
 import ec.com.viajesuta.Interfaces.viajeCarro;
 import ec.com.viajesuta.Reportes.AutosxPlaca;
+import ec.com.viajesuta.Reportes.DetalleAuto;
+import java.beans.PropertyVetoException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
 
 
@@ -70,6 +74,8 @@ public class menu extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
@@ -128,6 +134,22 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem7);
+
+        jMenuItem8.setText("nuevoReporte");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem9.setText("segundo");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem9);
 
         jMenuBar1.add(jMenu2);
 
@@ -213,6 +235,37 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         a.show();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        DetalleAuto a=new DetalleAuto();
+        jDesktopPane1.add(a);
+        a.show();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        conexion cc=new conexion();
+        try {
+            // TODO add your handling code here:
+            JasperReport reporte=JasperCompileManager.compileReport("C:/Users/danie/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/report1.jrxml");
+            JasperPrint print=JasperFillManager.fillReport(reporte,null,cc.conectar());
+            JInternalFrame frame= new JInternalFrame("Reporte");
+            frame.getContentPane().add(new JRViewer(print));
+            frame.pack();
+            frame.setSize(1000, 700);
+            menu a = new menu();
+            jDesktopPane1.add(frame);
+            try {
+                frame.setMaximum(true);
+                
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(DetalleAuto.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            frame.show();
+        } catch (JRException ex) {
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,7 +302,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -261,5 +314,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     public javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
