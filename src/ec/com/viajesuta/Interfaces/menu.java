@@ -30,6 +30,7 @@ import net.sf.jasperreports.view.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
 
 
+
 /**
  *
  * @author USER-16
@@ -219,7 +220,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         // TODO add your handling code here:
         conexion cc=new conexion();
         try {
-            JasperReport reporte= JasperCompileManager.compileReport("C:/Users/danie/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/ReporteAutos.jrxml");
+            JasperReport reporte= JasperCompileManager.compileReport("C:/Users/PC15_Lab06_Inv/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/ReporteAutos.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,cc.conectar());
             JasperViewer.viewReport(print,false);
         } catch (JRException ex) {
@@ -246,7 +247,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         conexion cc=new conexion();
         try {
             // TODO add your handling code here:
-            JasperReport reporte=JasperCompileManager.compileReport("C:/Users/danie/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/report1.jrxml");
+            JasperReport reporte=JasperCompileManager.compileReport("C:/Users/PC15_Lab06_Inv/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/report1.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,cc.conectar());
             JInternalFrame frame= new JInternalFrame("Reporte");
             frame.getContentPane().add(new JRViewer(print));
@@ -260,7 +261,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             } catch (PropertyVetoException ex) {
                 Logger.getLogger(DetalleAuto.class.getName()).log(Level.SEVERE, null, ex);
             }
-            frame.show();
+            frame.setVisible(true);
         } catch (JRException ex) {
             Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
         }

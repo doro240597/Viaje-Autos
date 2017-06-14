@@ -86,7 +86,7 @@ public class AutosxPlaca extends javax.swing.JInternalFrame {
         try {
             Map parametros=new HashMap();
             parametros.put("placa", txtAutoPlaca.getText());
-            JasperReport reporte= JasperCompileManager.compileReport("C:/Users/danie/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/autosxPlaca.jrxml");
+            JasperReport reporte= JasperCompileManager.compileReport("C:/Users/PC15_Lab06_Inv/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/autosxPlaca.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,parametros,cc.conectar());
             JasperViewer.viewReport(print,false);
         } catch (JRException ex) {

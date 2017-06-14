@@ -91,7 +91,7 @@ public class DetalleAuto extends javax.swing.JInternalFrame {
         conexion cc=new conexion();
         try {
             // TODO add your handling code here:
-            JasperReport reporte=JasperCompileManager.compileReport("C:/Users/danie/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/DetalleAutos.jrxml");
+            JasperReport reporte=JasperCompileManager.compileReport("C:/Users/PC15_Lab06_Inv/Documents/NetBeansProjects/ec.com.viajesUta/src/ec/com/viajesuta/Reportes/DetalleAutos.jrxml");
             JasperPrint print=JasperFillManager.fillReport(reporte,null,cc.conectar());
             JInternalFrame frame= new JInternalFrame("Reporte");
             frame.getContentPane().add(new JRViewer(print));
