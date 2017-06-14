@@ -42,23 +42,6 @@ where viajes.`AUT_PLACA` = $P{placa}]]>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="58" splitType="Stretch">
-			<line>
-				<reportElement x="0" y="8" width="555" height="1"/>
-			</line>
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="51" width="555" height="1"/>
-			</line>
-			<staticText>
-				<reportElement x="65" y="13" width="424" height="35"/>
-				<textElement textAlignment="Center">
-					<font size="26" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Classic template]]></text>
-			</staticText>
-		</band>
-	</title>
 	<pageHeader>
 		<band splitType="Stretch"/>
 	</pageHeader>

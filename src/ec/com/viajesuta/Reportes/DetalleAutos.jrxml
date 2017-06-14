@@ -54,7 +54,7 @@ where autos.`AUT_PLACA` = $P{placa}]]>
 				<textElement textAlignment="Center">
 					<font size="26" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Classic template]]></text>
+				<text><![CDATA[Detalle-Maestro]]></text>
 			</staticText>
 		</band>
 	</title>
